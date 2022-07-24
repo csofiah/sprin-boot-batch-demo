@@ -24,7 +24,7 @@ public class JobTask {
     @Autowired
     private Job job;
 
-    @Scheduled(fixedRate = 10000)
+    @Scheduled(fixedRate = 10000  )
     public void executeJob() throws Exception{
         LOG.info("inicio "+ new Date());
         JobParameters jobParameters = new JobParametersBuilder()

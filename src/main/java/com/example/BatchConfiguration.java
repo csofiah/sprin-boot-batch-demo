@@ -32,6 +32,9 @@ public class BatchConfiguration {
     @Autowired
     public StepBuilderFactory stepBuilderFactory;
 
+    //en caso q se requiera leer de un archivo
+    //@Value("classpath:paises.csv")
+    //private Resource resource;
     @Bean
     public FlatFileItemReader<Person> reader(){
         return new FlatFileItemReaderBuilder<Person>()

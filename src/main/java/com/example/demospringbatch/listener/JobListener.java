@@ -28,8 +28,11 @@ public class JobListener extends JobExecutionListenerSupport {
             LOG.info("Finalizo el job , verifica los resultados: ");
 
             jdbcTemplate.query("SELECT first_name, last_name, phone FROM person ",
-                            (rs, row) -> new Person(rs.getString(1), rs.getString(2), rs.getString(3)))
-                    .forEach(person -> LOG.info("Registro <"+person+">"));
+                            (rs, row) -> new Person(
+                                    rs.getString(1),
+                                    rs.getString(2),
+                                    rs.getString(3)))
+                    .forEach(person -> LOG.info("Registro <"+person+">" + " > in the database"));
         }
     }
 
